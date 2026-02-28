@@ -1,3 +1,4 @@
+# LaTeX
 *.aux
 *.fdb_latexmk
 *.fls
@@ -5,3 +6,8 @@
 *.out
 *.toc
 *.gz
+
+# OS / editor
+.DS_Store
+.vscode/
+*~
