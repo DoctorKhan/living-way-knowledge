@@ -4,39 +4,39 @@
 
 ### Chapter 1
 
-道可道，非恆道。  
-Ways that can be spoken are not eternal ways.
+    道可道，非恆道。  
+    Ways that can be spoken are not the eternal way.
 
-名可名，非恆名。
-Distinctions we can define are not eternal distinctions.
+    名可名，非恆名。
+    Distinctions we can define are not eternal distinctions.
 
-有名，萬物之母。  
-With distinction, it spans the world of forms,  
-encompassing all things seen.
+    有名，萬物之母。  
+    With distinction, it spans the world of forms,  
+    encompassing all things seen.
 
-無名，萬物之始；  
-Without distinction, it precedes the world of forms,  
-residing within the eternal unseen.
+    無名，萬物之始；  
+    Without distinction, it precedes the world of forms,  
+    residing within the eternal unseen.
 
-恆有欲，以觀其徼；  
-With desire, you observe the boundaries,  
-its limits becoming clear.
+    恆有欲，以觀其徼；  
+    With desire, you observe the boundaries,  
+    its limits becoming clear.
 
-故恆無欲，以觀其妙。  
-Without desire, you observe the inner workings,  
-its nature becoming clear.
+    故恆無欲，以觀其妙。  
+    Without desire, you observe the inner workings,  
+    its nature becoming clear.
 
-異名同謂。  
-Both of these are different distinctions, yet point to one way.
+    異名同謂。  
+    Both of these are different distinctions, yet point to one way.
 
-兩者同出，
-For both of these have the same origin.
+    兩者同出，
+    For both of these have the same origin.
 
-玄之又玄。
-In the depths of the unseen
+    玄之又玄。
+    Within the depths of the unseen
 
-眾妙之門。  
-lies the gateway to all profound mysteries.
+    眾妙之門。  
+    lies the gateway to all profound mysteries.
 
 ### Chapter 2
 
@@ -44,16 +44,16 @@ lies the gateway to all profound mysteries.
 When beauty is distinguished,
 
 斯惡已。
-its shadow appears
+its shadow appears.
 
 皆知善
-When goodness is praised,
+When goodness is defined,
 
-斯不善矣。 
-another is rejected as bad
+斯不善矣。
+inadequacy is born.
 
 有無之相生也，  
-Being and non-being create each other
+Being and non-being create each other.
 
 難易之相成也，  
 Difficult and easy shape each other.
@@ -71,25 +71,25 @@ Tone and sound weave each other into harmony.
 Before and after walk in sequence.
 
 是以聖人居無為之事，  
-Therefore, the Sage dwells in non-action, before the creation of opposites
+Therefore, the unforced leader dwells in unforced action, before the creation of opposites,
 
 行不言之教；  
-and teaches without imposing words.
+and guides without imposing words.
 
 萬物作焉而不辭，  
-The ten thousand things arise, and the Sage does not turn away.
+All things arise, and the leader does not turn away.
 
 生而不有，  
-Brings forth, but does not possess.
+They bring forth, but do not possess.
 
 為而不恃，  
-Acts, but does not depend on status or claim.
+They act, but do not require claim.
 
 功成而弗居。  
-Accomplishes, but does not dwell on accomplishment.
+They accomplish, but do not dwell on accomplishment.
 
 夫唯弗居，是以不去。  
-Because the Sage does not dwell on it, it does not leave.
+Because they do not dwell on it, it never leaves them.
 
 ### Chapter 3
 
