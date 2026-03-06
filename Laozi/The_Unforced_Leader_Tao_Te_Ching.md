@@ -90,22 +90,30 @@ Because they do not dwell on it, it never leaves them.
 ### Chapter 3
 
 不尚賢，使民不爭； 不貴難得之貨，使民不為盜；
-Not to value and employ men of superior ability is the way to keep the people from rivalry among themselves;
+Do not exalt the worthy,
+and the people will not contend;
+do not prize rare treasures,
+and the people will not steal.
 
 不見可欲，使民心不亂。
-not to prize articles which are difficult to procure is the way to keep them from becoming thieves;
+Do not display what can be desired,
+and the people's hearts will not be disturbed.
 
 是以聖人之治，虛其心，實其腹，
-not to show them what is likely to excite their desires is the way to keep their minds from disorder.
+Therefore, the unforced leader
+empties their minds and fills their bellies,
 
 弱其志，強其骨。 常使民無知無欲。
-Therefore the sage, in the exercise of his government, empties their minds, fills their bellies, weakens their wills, and strengthens their bones.
+softens their striving and strengthens their bones.
 
 使夫智者不敢為也。
-He constantly (tries to) keep them without knowledge and without desire, and where there are those who have knowledge, to keep them from presuming to act (on it).
+They keep the people free
+from cunning and craving,
+so the clever do not dare interfere.
 
 為無為，則無不治。
-When there is this abstinence from action, good order is universal.
+Practice unforced action,
+and nothing is left disordered.
 
 ### Chapter 4
 
@@ -1021,19 +1029,19 @@ no fault greater than the wish to be getting. Therefore the sufficiency of conte
 ### Chapter 47
 
 不出戶，知天下；
-Without going outside his door, one understands (all that takes place) under the sky;
+Without stepping outside the door, one understands what unfolds under heaven.
 
 不闚牖，見天道。
-without looking out from his window, one sees the Tao of Heaven.
+Without looking out the window, one sees the Way of Heaven.
 
 其出彌遠，其知彌少。
-The farther that one goes out (from himself), the less he knows.
+The farther one goes outward, the less one understands.
 
 是以聖人不行而知，不見而名，
-Therefore the sages got their knowledge without travelling;
+Therefore, the unforced leader knows without wandering;
 
 不為而成。
-gave their (right) names to things without seeing them; and accomplished their ends without any purpose of doing so.
+distinguishes without looking; and accomplishes without forcing.
 
 ### Chapter 48
 
