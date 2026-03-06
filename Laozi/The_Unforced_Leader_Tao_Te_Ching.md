@@ -90,30 +90,34 @@ Because they do not dwell on it, it never leaves them.
 ### Chapter 3
 
 不尚賢，使民不爭； 不貴難得之貨，使民不為盜；
-Do not exalt the worthy,
-and the people will not contend;
-do not prize rare treasures,
-and the people will not steal.
+When superiority is exalted,
+people begin to compete.
+
+When rare things are prized,
+people begin to steal.
 
 不見可欲，使民心不亂。
-Do not display what can be desired,
-and the people's hearts will not be disturbed.
+When desire is put on display,
+the heart grows restless.
 
 是以聖人之治，虛其心，實其腹，
 Therefore, the unforced leader
-empties their minds and fills their bellies,
+empties the mind of excess
+and fills the belly with what is needed.
 
 弱其志，強其骨。 常使民無知無欲。
-softens their striving and strengthens their bones.
+They soften striving
+and strengthen what endures,
+keeping people free
+from manufactured knowing
+and grasping desire.
 
 使夫智者不敢為也。
-They keep the people free
-from cunning and craving,
-so the clever do not dare interfere.
+Then cleverness does not rush to interfere.
 
 為無為，則無不治。
 Practice unforced action,
-and nothing is left disordered.
+and all things return to order.
 
 ### Chapter 4
 
