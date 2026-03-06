@@ -40,13 +40,13 @@ lies the gateway to all profound mysteries.
 When beauty is distinguished,
 
 斯惡已。
-its shadow appears.
+ugliness appears.
 
 皆知善
 When goodness is defined,
 
 斯不善矣。
-inadequacy is born.
+what is not-good is born.
 
 有無之相生也，
 Being and non-being create each other.
@@ -67,7 +67,7 @@ Tone and sound weave each other into harmony.
 Before and after walk in sequence.
 
 是以聖人居無為之事，
-Therefore, the unforced leader dwells in unforced action, before the creation of opposites,
+Therefore, the unforced leader moves before distinctions harden into opposites,
 
 行不言之教；
 and guides without imposing words.
@@ -79,13 +79,13 @@ All things arise, and the leader does not turn away.
 They bring forth, but do not possess.
 
 為而不恃，
-They act, but do not require claim.
+They act, but do not cling to the act.
 
 功成而弗居。
 They accomplish, but do not dwell on accomplishment.
 
 夫唯弗居，是以不去。
-Because they do not dwell on it, it never leaves them.
+Because they do not dwell on it, it does not leave them.
 
 ### Chapter 3
 
