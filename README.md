@@ -7,7 +7,7 @@ Canonical source for **public** Living Way texts used by the marketing site and 
 ```text
 living-way-knowledge/
   Core/                    # Shared doctrine, guide texts, cross-tradition content
-  Laozi/                   # One folder per guide / teacher / tradition
+  Laozi/                   # One folder per voice / path / tradition
   Gotama/
   Krishna/                 # Gita, Madālasā lullaby, Śiva-saṅkalpa Suktam, etc.
   Einstein/
@@ -32,15 +32,17 @@ See [GUIDE_ORGANIZATION.md](GUIDE_ORGANIZATION.md) for the canonical content mod
 ## Build and sync
 
 ```bash
-./run.sh                 # default: build PDFs + HTML, then sync to sibling site/app
-./run.sh rebuild         # same as default
-./run.sh build-only      # build only (skip sync)
-./run.sh sync            # sync only (no LaTeX/HTML; quick mirror refresh)
+./run.sh                    # incremental PDF/HTML (only if sources newer), then sync
+./run.sh incremental        # same as default
+./run.sh rebuild            # force full PDF + HTML build, then sync
+./run.sh build-only         # incremental build only (no sync)
+./run.sh build-only force   # full build only (no sync)
+./run.sh sync               # sync only (no LaTeX/HTML; e.g. after editing Markdown only)
 ```
 
-- Compiles `The_Living_Way.tex`, `The_Living_Suttas.tex`, `The_Living_Architecture.tex` to PDF.
-- Runs `tools/build_html.sh` to generate HTML from `.tex` and the guide Markdown.
-- If `../living-way-site` and/or `../living-way-app` exist, runs **`tools/sync-public-knowledge.sh`** into each `public-knowledge/` so you do not need a second step after a full build.
+- **Incremental:** Runs `pdflatex` only for a `.tex` whose `.pdf` is missing or older than the `.tex`. Runs **`tools/build_html.sh`** only if a root `.tex`, `templates/guide_template.html`, `tools/build_html.sh`, or `living-way-guide.md` is newer than the matching `.html` (or HTML is missing).
+- **Forced:** `./run.sh rebuild` (or `force`) rebuilds all three PDFs and the full HTML set regardless of mtimes.
+- If `../living-way-site` and/or `../living-way-app` exist, the default path still runs **`tools/sync-public-knowledge.sh`** so Markdown and other edits reach consumers even when LaTeX/HTML were skipped.
 
 ## Sync to site and app (manual)
 

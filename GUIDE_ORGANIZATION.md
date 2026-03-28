@@ -15,7 +15,7 @@ Use the repository in four zones:
 ```text
 living-way-knowledge/
   Core/                     # Shared doctrine, guide material, non-persona texts
-  Laozi/                    # One folder per teacher / guide / source tradition
+  Laozi/                    # One folder per voice / path / source tradition
   Gotama/
   Krishna/                  # Gita + related Hindu Sanskrit sources (see below)
   Einstein/
@@ -74,7 +74,7 @@ The long-term target shape should look like this:
 ```text
 living-way-knowledge/
   Core/                    # Shared framework, comparison texts, neutral orientation
-  Yeshua/                  # Christic pathway texts
+  Yeshua/                  # Yeshuan pathway texts
   Gotama/                  # Buddhist pathway texts
   Krishna/                 # Gita / bhakti / dharma pathway texts
   Laozi/                   # Taoist pathway texts
@@ -97,13 +97,13 @@ Put texts here when they are not the voice of one guide, for example:
 - shared architecture texts
 - cross-tradition framing
 
-`Core/` should be the home for anything that would still make sense if every teacher folder disappeared.
+`Core/` should be the home for anything that would still make sense if every voice folder disappeared.
 
-If an existing `Core/` text is clearly Christic, Buddhist, Taoist, or otherwise pathway-specific, treat that as migration debt and plan to move it into the matching folder when practical.
+If an existing `Core/` text is clearly Yeshuan, Buddhist, Taoist, or otherwise pathway-specific, treat that as migration debt and plan to move it into the matching folder when practical.
 
 ### 2. Persona folders
 
-Each teacher or tradition gets one top-level folder:
+Each voice or tradition gets one top-level folder:
 
 - `Laozi/`
 - `Gotama/`
@@ -148,7 +148,7 @@ They should represent:
 - printable compilations
 - carefully edited long-form editions
 
-If a text begins life as a single-teacher or shared source text, it should usually start in `Core/` or a teacher folder and only later be pulled into a root `.tex` compilation when it is ready for publication.
+If a text begins life as a single-voice or shared source text, it should usually start in `Core/` or a voice folder and only later be pulled into a root `.tex` compilation when it is ready for publication.
 
 ### 4. Root generated outputs
 
@@ -191,7 +191,7 @@ This repo is the source of truth for:
 - public Markdown texts
 - public LaTeX texts
 - public generated HTML and PDF artifacts
-- library-facing shared documents such as `index.html` (teacher/work index) and `read.html` (Markdown reader); both are authored here and copied to consumers by **`tools/sync-public-knowledge.sh`** (see **Shared sync tooling** above), usually via `living-way-site/scripts/sync-public-knowledge.sh` or CI
+- library-facing shared documents such as `index.html` (voice/work index) and `read.html` (Markdown reader); both are authored here and copied to consumers by **`tools/sync-public-knowledge.sh`** (see **Shared sync tooling** above), usually via `living-way-site/scripts/sync-public-knowledge.sh` or CI
 
 ### `../living-way-site`
 
@@ -225,7 +225,7 @@ Do not fork public text content into the app unless there is a clear product nee
 When an agent works across the sibling repositories, follow this order:
 
 1. Update canonical public content in `../living-way-knowledge`.
-2. Rebuild generated artifacts here if the change affects HTML or PDF outputs (`./run.sh` builds **and** syncs to sibling `../living-way-site` and `../living-way-app` when those repos exist; use `./run.sh build-only` to skip sync, or `./run.sh sync` to sync without rebuilding).
+2. Rebuild generated artifacts when needed (`./run.sh` runs **incremental** PDF/HTML only if sources are newer than outputs, then syncs; use `./run.sh rebuild` for a full LaTeX/HTML build, `./run.sh build-only` to skip sync, or `./run.sh sync` to sync without building).
 3. If you skipped automatic sync, push mirrors manually: `../living-way-site/scripts/sync-public-knowledge.sh`, `../living-way-app/scripts/sync-public-knowledge.sh`, or `./run.sh sync`.
 4. Update `../living-way-app` only for metadata, prompts, indexing, navigation, or private overlays.
 
