@@ -13,6 +13,7 @@ living-way-knowledge/
   Einstein/                # Empirical path: science as path (humility, test ideas, neuroscience & illusion)
   KabatZinn/               # Empirical path: mindfulness inquiry (Living Way framing)
   Architect/               # System synthesis: integrated map
+  Musashi/                 # Warrior path (discipline, timing, void)
 
   *.md                     # Canonical text sources, including book-level works
   *.tex                    # Generated print editions for selected works

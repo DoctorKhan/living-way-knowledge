@@ -22,6 +22,7 @@ living-way-knowledge/
   Einstein/                 # Empirical path: science as path (evidence, wonder, belief-optional)
   KabatZinn/                # Empirical path: mindfulness as observation (belief-optional)
   Architect/                # System synthesis: integrated map (simulation, forgetting, return)
+  Musashi/                  # Warrior path: discipline, timing, void (Living Way originals)
 
   tools/                    # Build helpers + shared public-knowledge rsync (see below)
   templates/                # HTML templates used by the build
@@ -59,6 +60,7 @@ The public **Library by Voice** page orders material so readers can see **two co
 | **Empirical paths** | `Einstein/`, `KabatZinn/` | **Science as path**: humility, testing ideas, skepticism toward first thoughts; neuroscience as study of **perceptual and cognitive illusion**—plus **embodied observation** (Kabat-Zinn)—**without** requiring creed first. |
 | **System synthesis** | `Core/` treatise + scrolls, `Architect/` | How traditions and metaphors fit together as **one system**. |
 | **Tradition paths** | `Gotama/`, `Laozi/`, `Krishna/`, … | Named lineages in their own languages and images. |
+| **Warrior path** | `Musashi/` | Discipline, timing, emptiness—**attention** as training; Living Way originals after Musashi’s **spirit**, not classical translations. |
 
 Yeshua remains a major entry (root scrolls + Wisdom Gospels); **Foundations** holds shared Markdown sources that are not tied to one persona voice.
 
@@ -104,7 +106,7 @@ living-way-knowledge/
   Einstein/                # Empirical: science as path (belief-optional)
   KabatZinn/               # Empirical: mindfulness inquiry (belief-optional)
   Architect/               # System synthesis: integrated structural map
-  Musashi/                 # Warrior / discipline pathway texts
+  Musashi/                 # Warrior path: discipline, timing, void (Living Way originals)
 ```
 
 This does not require a disruptive rewrite all at once. It does require a rule:
@@ -137,6 +139,7 @@ Each voice or tradition gets one top-level folder:
 - `Einstein/`
 - `KabatZinn/`
 - `Architect/`
+- `Musashi/`
 
 Inside each folder, prefer one canonical Markdown file per work. Keep filenames stable and descriptive, since sibling repos may deep-link to them.
 
@@ -156,6 +159,17 @@ Use **`KabatZinn/`** for Living Way framing of **belief-optional, body-first** i
 | `The_Mindfulness_Inquiry_Path_of_the_Living_Way.md` | Primary Kabat-Zinn-path framing for the library |
 
 Update **`index.html`** if you add works here, then sync **`tools/sync-public-knowledge.sh`**.
+
+#### `Musashi/` (warrior path)
+
+Use **`Musashi/`** for **original** Living Way texts in the **spirit** of Miyamoto Musashi—discipline under pressure, timing, adaptation, and emptiness—without pasting copyrighted translations of classical Japanese works. The Five Books structure (Earth, Water, Fire, Wind, Void) is a **scaffold**, not a claim of textual authenticity.
+
+| File | Role |
+|------|------|
+| `The_Warrior_Path_of_the_Living_Way.md` | Primary warrior-path teaching (five books + coda) |
+| `The_Twenty-One_Precepts_of_the_Living_Way.md` | Short daily precepts (after the spirit of the *Dokkōdō*) |
+
+Update **`index.html`** when adding works; sync consumers with **`tools/sync-public-knowledge.sh`**.
 
 #### `Krishna/` (Gita strand + Sanskrit shelf)
 
