@@ -22,6 +22,7 @@ show_help() {
   echo ""
   echo "Markdown or other files under this repo are still synced on the default path even when"
   echo "LaTeX/HTML are skipped; use ./run.sh sync for a fast mirror refresh without any build."
+  echo "Guide HTML is built from Core/living-way-guide.md (see tools/build_html.sh)."
 }
 
 # True if we should run pdflatex for this root-level .tex file.
@@ -46,9 +47,10 @@ needs_html_build() {
     [[ -f "$TEMPLATE" && "$TEMPLATE" -nt "$html" ]] && return 0
     [[ -f "$BUILD_HTML_SH" && "$BUILD_HTML_SH" -nt "$html" ]] && return 0
   done
-  if [[ -f "$ROOT/living-way-guide.md" ]]; then
+  local guide_md="$ROOT/Core/living-way-guide.md"
+  if [[ -f "$guide_md" ]]; then
     [[ ! -f "$ROOT/living_way_guide.html" ]] && return 0
-    [[ "$ROOT/living-way-guide.md" -nt "$ROOT/living_way_guide.html" ]] && return 0
+    [[ "$guide_md" -nt "$ROOT/living_way_guide.html" ]] && return 0
     [[ -f "$TEMPLATE" && "$TEMPLATE" -nt "$ROOT/living_way_guide.html" ]] && return 0
     [[ -f "$BUILD_HTML_SH" && "$BUILD_HTML_SH" -nt "$ROOT/living_way_guide.html" ]] && return 0
   fi

@@ -23,7 +23,7 @@ living-way-knowledge/
   templates/               # Pandoc templates
 ```
 
-- **Canonical source texts:** `Core/` and the guide folders (`Laozi/`, `Gotama/`, `Krishna/`, ...).
+- **Canonical source texts:** `Core/` and the guide folders (`Laozi/`, `Gotama/`, `Krishna/`, ...). The styled guide page **`living_way_guide.html`** is generated from **`Core/living-way-guide.md`** (same as the `read.html?doc=…` source).
 - **Publication sources:** root `.tex` files for curated compilations.
 - **Generated outputs:** root `*.html` and `*.pdf` from `run.sh` / `tools/build_html.sh` and `pdflatex`.
 
@@ -40,7 +40,7 @@ See [GUIDE_ORGANIZATION.md](GUIDE_ORGANIZATION.md) for the canonical content mod
 ./run.sh sync               # sync only (no LaTeX/HTML; e.g. after editing Markdown only)
 ```
 
-- **Incremental:** Runs `pdflatex` only for a `.tex` whose `.pdf` is missing or older than the `.tex`. Runs **`tools/build_html.sh`** only if a root `.tex`, `templates/guide_template.html`, `tools/build_html.sh`, or `living-way-guide.md` is newer than the matching `.html` (or HTML is missing).
+- **Incremental:** Runs `pdflatex` only for a `.tex` whose `.pdf` is missing or older than the `.tex`. Runs **`tools/build_html.sh`** only if a root `.tex`, `templates/guide_template.html`, `tools/build_html.sh`, or **`Core/living-way-guide.md`** is newer than the matching `.html` (or HTML is missing).
 - **Forced:** `./run.sh rebuild` (or `force`) rebuilds all three PDFs and the full HTML set regardless of mtimes.
 - If `../living-way-site` and/or `../living-way-app` exist, the default path still runs **`tools/sync-public-knowledge.sh`** so Markdown and other edits reach consumers even when LaTeX/HTML were skipped.
 

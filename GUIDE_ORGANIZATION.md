@@ -15,6 +15,7 @@ Use the repository in four zones:
 ```text
 living-way-knowledge/
   Core/                     # Shared doctrine, guide material, non-persona texts
+                            # living-way-guide.md → ../living_way_guide.html (Pandoc; see tools/build_html.sh)
   Laozi/                    # One folder per voice / path / source tradition
   Gotama/
   Krishna/                  # Gita + related Hindu Sanskrit sources (see below)
@@ -98,6 +99,8 @@ Put texts here when they are not the voice of one guide, for example:
 - cross-tradition framing
 
 `Core/` should be the home for anything that would still make sense if every voice folder disappeared.
+
+**Guide build:** `Core/living-way-guide.md` is the single source for the root-level `living_way_guide.html` (Pandoc + `templates/guide_template.html` in `tools/build_html.sh`). Edit the Markdown only; regenerate HTML with `./run.sh` or `./tools/build_html.sh`.
 
 If an existing `Core/` text is clearly Yeshuan, Buddhist, Taoist, or otherwise pathway-specific, treat that as migration debt and plan to move it into the matching folder when practical.
 

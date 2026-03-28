@@ -76,10 +76,11 @@ for f in *.tex; do
 	process_tex "$f"
 done
 
-# Process the Guide (Markdown)
-if [ -f "living-way-guide.md" ]; then
-    echo "Converting living-way-guide.md..."
-    pandoc living-way-guide.md \
+# Process the Guide (Markdown) — canonical source is Core/living-way-guide.md
+GUIDE_MD="Core/living-way-guide.md"
+if [ -f "$GUIDE_MD" ]; then
+    echo "Converting $GUIDE_MD..."
+    pandoc "$GUIDE_MD" \
         -o living_way_guide.html \
         --template="$TEMPLATE" \
         --metadata title="A Guide to The Way of the Living Jesus" \
