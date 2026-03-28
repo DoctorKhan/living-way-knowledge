@@ -19,7 +19,7 @@ living-way-knowledge/
   index.html               # Shared library shell
   read.html                # Shared markdown reader
 
-  tools/                   # Build helpers
+  tools/                   # Build helpers + `sync-public-knowledge.sh` / `public-knowledge-rsync.excludes`
   templates/               # Pandoc templates
 ```
 
@@ -38,16 +38,23 @@ See [GUIDE_ORGANIZATION.md](GUIDE_ORGANIZATION.md) for the canonical content mod
 - Compiles `The_Living_Way.tex`, `The_Living_Suttas.tex`, `The_Living_Architecture.tex` to PDF.
 - Runs `tools/build_html.sh` to generate HTML from `.tex` and the guide Markdown.
 
-## Sync to site
+## Sync to site and app
 
-The marketing site keeps a synced copy of this repo in `public-knowledge/`:
+**Canonical rsync** is implemented once in **`tools/sync-public-knowledge.sh`**, with exclude patterns in **`tools/public-knowledge-rsync.excludes`**.
 
 ```bash
-# From living-way-site/
+# Site (from living-way-site/)
 ./scripts/sync-public-knowledge.sh
+
+# App (from living-way-app/)
+./scripts/sync-public-knowledge.sh
+# or: ./run.sh sync-knowledge
+
+# Direct (from this repo — any destination)
+./tools/sync-public-knowledge.sh /path/to/public-knowledge/
 ```
 
-Run after changing canonical content, **`index.html`** / **`read.html`**, or rebuilding HTML/PDF so the site serves the latest. The sync copies the whole knowledge tree into `public-knowledge/`, including the library index.
+Run after changing canonical content, **`index.html`** / **`read.html`**, or rebuilding HTML/PDF so consumers serve the latest. The sync copies the whole knowledge tree, including the library index.
 
 ## Deployment
 

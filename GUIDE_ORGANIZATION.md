@@ -21,7 +21,7 @@ living-way-knowledge/
   Einstein/
   Architect/
 
-  tools/                    # Build and sync helpers owned by this repo
+  tools/                    # Build helpers + shared public-knowledge rsync (see below)
   templates/                # HTML templates used by the build
 
   The_Living_Way.tex        # Curated anthology / book-level source
@@ -129,10 +129,11 @@ Use **`Krishna/`** for the Living Way Gita and for **closely related Hindu Sansk
 | `The_Gita_of_the_Living_Way.md` | Primary Krishna-strand teaching text |
 | `Madalas_Lullaby_Sanskrit_and_Translation.md` | Mārkaṇḍeya Purāṇa ch. 25 (Madālasā, ślokas 11–14) |
 | `Shiva_Sankalpa_Suktam_Sanskrit_and_Translation.md` | Śiva-saṅkalpa / Vājasaneyi Saṃhitā ch. 34 (six mantras) |
+| `Atma_Samharana_Pranaagnihotra_Mantras_Sanskrit_and_Translation.md` | Mahānārāyaṇa Upaniṣad sec. 66 (faculty-dissolution / return-to-Brahman chant) |
 
-The **library index** (`index.html`) lists these under **Krishna**. After adding or renaming a file here, update that section and run **`../living-way-site/scripts/sync-public-knowledge.sh`** so `public-knowledge/` (and any app copy of it) stays aligned.
+The **library index** (`index.html`) lists these under **Krishna**. After adding or renaming a file here, update that section and run **`tools/sync-public-knowledge.sh`** (via the site or app wrapper scripts below) so each consumer’s `public-knowledge/` stays aligned.
 
-**App prompts:** `living-way-app` currently embeds only `The_Gita_of_the_Living_Way.md` into `KRISHNA_TEXT` via `scripts/generate-knowledge-base.js`. The lullaby and Śiva-saṅkalpa live in the public library for human reading unless you extend the generator to concatenate them.
+**App prompts:** `living-way-app` currently embeds only `The_Gita_of_the_Living_Way.md` into `KRISHNA_TEXT` via `scripts/generate-knowledge-base.js`. The lullaby, Śiva-saṅkalpa, and Ātma-Saṃharaṇa / Prāṇāgnihotra text live in the public library for human reading unless you extend the generator to concatenate them.
 
 Avoid mixing prompts, product notes, experiments, or unpublished fragments into these folders.
 
@@ -154,6 +155,23 @@ Keep generated `*.html` and `*.pdf` at the repo root for now because the site sy
 
 Agents should not move generated outputs into `dist/` or `build/` unless they also update the site sync and any app links that assume the current root-level paths.
 
+## Shared sync tooling (`public-knowledge` mirror)
+
+**One rsync recipe** lives here so local sync, the marketing site, CI, and the app do not drift:
+
+| Path | Role |
+|------|------|
+| `tools/public-knowledge-rsync.excludes` | Patterns passed to `rsync --exclude-from=` (`.git/`, LaTeX junk, etc.) |
+| `tools/sync-public-knowledge.sh` | `rsync -av --delete` from this repo’s root into a destination directory |
+
+**How consumers invoke it** (each repo expects `living-way-knowledge` as a sibling directory):
+
+- **Site:** `living-way-site/scripts/sync-public-knowledge.sh` → `exec ../living-way-knowledge/tools/sync-public-knowledge.sh …/public-knowledge/`
+- **App:** `living-way-app/scripts/sync-public-knowledge.sh` → same destination under the app
+- **CI:** `living-way-site/.github/workflows/sync-knowledge.yml` runs `bash knowledge-repo/tools/sync-public-knowledge.sh public-knowledge/`
+
+To add or remove exclude rules, edit **`tools/public-knowledge-rsync.excludes`** only; do not duplicate `--exclude` flags in the site or workflow.
+
 ## Content Rules
 
 - Public text lives here.
@@ -172,7 +190,7 @@ This repo is the source of truth for:
 - public Markdown texts
 - public LaTeX texts
 - public generated HTML and PDF artifacts
-- library-facing shared documents such as `index.html` (teacher/work index) and `read.html` (Markdown reader); both are authored here and copied to the site by `living-way-site/scripts/sync-public-knowledge.sh`
+- library-facing shared documents such as `index.html` (teacher/work index) and `read.html` (Markdown reader); both are authored here and copied to consumers by **`tools/sync-public-knowledge.sh`** (see **Shared sync tooling** above), usually via `living-way-site/scripts/sync-public-knowledge.sh` or CI
 
 ### `../living-way-site`
 
@@ -207,7 +225,7 @@ When an agent works across the sibling repositories, follow this order:
 
 1. Update canonical public content in `../living-way-knowledge`.
 2. Rebuild generated artifacts here if the change affects HTML or PDF outputs.
-3. Sync into `../living-way-site/public-knowledge/`.
+3. Sync into `../living-way-site/public-knowledge/` (and optionally `../living-way-app/public-knowledge/` via `./scripts/sync-public-knowledge.sh` or `./run.sh sync-knowledge`).
 4. Update `../living-way-app` only for metadata, prompts, indexing, navigation, or private overlays.
 
 ### If the task is a text change
