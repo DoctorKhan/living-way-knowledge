@@ -29,16 +29,20 @@ living-way-knowledge/
 
 See [GUIDE_ORGANIZATION.md](GUIDE_ORGANIZATION.md) for the canonical content model, public/private boundaries, and integration rules for `../living-way-site` and `../living-way-app`.
 
-## Build
+## Build and sync
 
 ```bash
-./run.sh
+./run.sh                 # default: build PDFs + HTML, then sync to sibling site/app
+./run.sh rebuild         # same as default
+./run.sh build-only      # build only (skip sync)
+./run.sh sync            # sync only (no LaTeX/HTML; quick mirror refresh)
 ```
 
 - Compiles `The_Living_Way.tex`, `The_Living_Suttas.tex`, `The_Living_Architecture.tex` to PDF.
 - Runs `tools/build_html.sh` to generate HTML from `.tex` and the guide Markdown.
+- If `../living-way-site` and/or `../living-way-app` exist, runs **`tools/sync-public-knowledge.sh`** into each `public-knowledge/` so you do not need a second step after a full build.
 
-## Sync to site and app
+## Sync to site and app (manual)
 
 **Canonical rsync** is implemented once in **`tools/sync-public-knowledge.sh`**, with exclude patterns in **`tools/public-knowledge-rsync.excludes`**.
 

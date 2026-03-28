@@ -126,6 +126,7 @@ Use **`Krishna/`** for the Living Way Gita and for **closely related Hindu Sansk
 
 | File | Role |
 |------|------|
+| `The_Krishna_Path_of_the_Living_Way.md` | Primary Krishna-path anthology for the Living Way |
 | `The_Gita_of_the_Living_Way.md` | Primary Krishna-strand teaching text |
 | `Madalas_Lullaby_Sanskrit_and_Translation.md` | Mārkaṇḍeya Purāṇa ch. 25 (Madālasā, ślokas 11–14) |
 | `Shiva_Sankalpa_Suktam_Sanskrit_and_Translation.md` | Śiva-saṅkalpa / Vājasaneyi Saṃhitā ch. 34 (six mantras) |
@@ -133,7 +134,7 @@ Use **`Krishna/`** for the Living Way Gita and for **closely related Hindu Sansk
 
 The **library index** (`index.html`) lists these under **Krishna**. After adding or renaming a file here, update that section and run **`tools/sync-public-knowledge.sh`** (via the site or app wrapper scripts below) so each consumer’s `public-knowledge/` stays aligned.
 
-**App prompts:** `living-way-app` currently embeds only `The_Gita_of_the_Living_Way.md` into `KRISHNA_TEXT` via `scripts/generate-knowledge-base.js`. The lullaby, Śiva-saṅkalpa, and Ātma-Saṃharaṇa / Prāṇāgnihotra text live in the public library for human reading unless you extend the generator to concatenate them.
+**App prompts:** `living-way-app` should prefer `The_Krishna_Path_of_the_Living_Way.md` as the Krishna-path anthology when building `KRISHNA_TEXT`. Keep the individual source files as readable standalone works and reference texts.
 
 Avoid mixing prompts, product notes, experiments, or unpublished fragments into these folders.
 
@@ -224,8 +225,8 @@ Do not fork public text content into the app unless there is a clear product nee
 When an agent works across the sibling repositories, follow this order:
 
 1. Update canonical public content in `../living-way-knowledge`.
-2. Rebuild generated artifacts here if the change affects HTML or PDF outputs.
-3. Sync into `../living-way-site/public-knowledge/` (and optionally `../living-way-app/public-knowledge/` via `./scripts/sync-public-knowledge.sh` or `./run.sh sync-knowledge`).
+2. Rebuild generated artifacts here if the change affects HTML or PDF outputs (`./run.sh` builds **and** syncs to sibling `../living-way-site` and `../living-way-app` when those repos exist; use `./run.sh build-only` to skip sync, or `./run.sh sync` to sync without rebuilding).
+3. If you skipped automatic sync, push mirrors manually: `../living-way-site/scripts/sync-public-knowledge.sh`, `../living-way-app/scripts/sync-public-knowledge.sh`, or `./run.sh sync`.
 4. Update `../living-way-app` only for metadata, prompts, indexing, navigation, or private overlays.
 
 ### If the task is a text change
