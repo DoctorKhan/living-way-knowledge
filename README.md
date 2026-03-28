@@ -1,32 +1,33 @@
 # Living Way Knowledge (public texts)
 
-Canonical source for **public** guide texts and scrolls used by the marketing site and the app.
+Canonical source for **public** Living Way texts used by the marketing site and the app.
 
 ## Directory layout
 
 ```text
 living-way-knowledge/
-  Core/                    # Core treatises and guide
-  Gotama/                   # Living Buddha / Dhammapada
-  Krishna/                  # Gita of the Living Way
-  Einstein/                 # Unified Field Papers
-  Architect/                # Manual of Simulation
-  Yeshua/                   # (add when used)
-  Musashi/                  # (add when used)
+  Core/                    # Shared doctrine, guide texts, cross-tradition content
+  Laozi/                   # One folder per guide / teacher / tradition
+  Gotama/
+  Krishna/                 # Gita, Madālasā lullaby, Śiva-saṅkalpa Suktam, etc.
+  Einstein/
+  Architect/
 
-  *.tex                     # LaTeX sources → PDF + HTML
-  *.md                      # Markdown (e.g. living-way-guide.md, tao-te-ching-*)
-  index.html                # Simple index of texts (standalone)
-  living_way_guide.html     # Built from Core/living-way-guide.md
+  *.tex                    # Curated publication / anthology sources
+  *.html                   # Generated HTML outputs served by the site sync
+  *.pdf                    # Generated PDF outputs served by the site sync
+  index.html               # Shared library shell
+  read.html                # Shared markdown reader
 
-  tools/                    # build_html.sh, etc.
-  templates/                # HTML templates for Pandoc
+  tools/                   # Build helpers
+  templates/               # Pandoc templates
 ```
 
-- **Source:** `Core/`, persona folders (`Gotama/`, `Krishna/`, …), root `.tex` and `.md`.
-- **Build outputs:** `*.html` and `*.pdf` from `run.sh` / `tools/build_html.sh` and `pdflatex`. LaTeX intermediates (`.aux`, `.log`, `.toc`, …) are gitignored.
+- **Canonical source texts:** `Core/` and the guide folders (`Laozi/`, `Gotama/`, `Krishna/`, ...).
+- **Publication sources:** root `.tex` files for curated compilations.
+- **Generated outputs:** root `*.html` and `*.pdf` from `run.sh` / `tools/build_html.sh` and `pdflatex`.
 
-See **GUIDE_ORGANIZATION.md** for persona-pack rules and where private content lives (in `living-way-app/private-knowledge/`, not here).
+See [GUIDE_ORGANIZATION.md](GUIDE_ORGANIZATION.md) for the canonical content model, public/private boundaries, and integration rules for `../living-way-site` and `../living-way-app`.
 
 ## Build
 
@@ -39,21 +40,21 @@ See **GUIDE_ORGANIZATION.md** for persona-pack rules and where private content l
 
 ## Sync to site
 
-The marketing site keeps a copy of this repo in `public-knowledge/`:
+The marketing site keeps a synced copy of this repo in `public-knowledge/`:
 
 ```bash
 # From living-way-site/
 ./scripts/sync-public-knowledge.sh
 ```
 
-Run after changing content or rebuilding HTML/PDF so the site serves the latest.
+Run after changing canonical content, **`index.html`** / **`read.html`**, or rebuilding HTML/PDF so the site serves the latest. The sync copies the whole knowledge tree into `public-knowledge/`, including the library index.
 
 ## Deployment
 
 This repo is **not deployed by itself** in the main workflow. Content is consumed by:
 
-1. **Marketing site** — Synced into **living-way-site**’s `public-knowledge/` via the script above; the site is deployed with GitHub Pages (see living-way-site README).
-2. **App** — The app reads public content from the knowledge repo or its own copy; no separate “deploy” of this repo is required.
+1. **Marketing site** — Synced into **living-way-site**’s `public-knowledge/`; treat that copy as publishing output, not the primary authoring location.
+2. **App** — The app consumes this repo’s public content and keeps any private overlays in its own gitignored locations; no separate deploy of this repo is required.
 
 **Optional: GitHub Pages for a standalone library**  
 If you want a separate URL that serves only this repo (e.g. a preview or standalone library), enable GitHub Pages in this repo: **Settings → Pages → Source: Deploy from a branch** (e.g. `main`, `/ (root)`). The root contains `index.html` and the built `.html`/`.pdf` files. Ensure you run `./run.sh` and commit the built files (or use a CI job to build and deploy) so the Pages site is up to date.
